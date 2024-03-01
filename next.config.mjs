@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images:{
+        domains: [
+           "media.stage.in"
+          ],
+    }
+};
 
 export default nextConfig;
