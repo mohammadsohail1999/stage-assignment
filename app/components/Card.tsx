@@ -12,7 +12,7 @@ const Card = ({imgPath}:{imgPath:string}) => {
     //  <img className='w-64 h-44' src={imgPath} alt='imagepath'/>
     // </div>
     <div
-      className="flex min-w-[250px] min-h-[170px] md:min-w-[200px] md:min-h-[510px] lg:rounded-lg overflow-hidden shadow-xl cursor-pointer border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 relative"
+      className="flex min-w-[250px] min-h-[170px] xs:min-w-[200px] xs:min-h-[510px] lg:rounded-lg overflow-hidden shadow-xl cursor-pointer border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 relative"
     >
       <Image
         src={imgPath}
