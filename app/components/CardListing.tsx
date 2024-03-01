@@ -15,6 +15,7 @@ const fetchFilms = ()=>{
 import React, { useEffect, useState } from 'react'
 import { BaseURL } from '../client/client';
 import Card from './Card';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const CardListing = () => {
 
@@ -22,6 +23,9 @@ const CardListing = () => {
 
  const [rowData,setRowData] = useState(null);
  const rootUrlHorizontal =  rowData?.data?.rootUrlHorizontal ? rowData?.data?.rootUrlHorizontal  : ""
+ const rootUrlVertical =  rowData?.data?.rootUrlVertical ? rowData?.data?.rootUrlVertical  : ""
+
+ 
 
  useEffect(()=>{
     fetchFilms().then(res=>res.json()).then(res=>{
@@ -31,11 +35,14 @@ const CardListing = () => {
 
 
  
+ const isMobile =  useMediaQuery("(max-width: 768px)");
+
+ 
 
 
 
 
- console.log(rowData);
+ console.log(rowData,isMobile);
 
 
 
@@ -61,7 +68,7 @@ const CardListing = () => {
           {rowData?.data?.rowData?.map((el) => {
                 return (
                   <Card
-                  imgPath={`${rootUrlHorizontal}/${el?.horizontal}`} key={el?._id}
+                  imgPath={`${isMobile ? rootUrlVertical  : rootUrlHorizontal}/${isMobile ? el?.vertical : el?.horizontal}`} key={el?._id}
                   />
                 );
               })}
